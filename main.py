@@ -124,9 +124,8 @@ class Snake(Pointers):
                 return True
             else:
                 self.boardObj.board[self.pointers.dequeue()]='🥚'
-                if self.boardObj.board[point]!='🥚':
-                    if self.boardObj.board[point]:
-                        self.boardObj.board[point] = '💢'
+                if self.boardObj.board[point]=='🐸' or self.boardObj.board[point]=='🚙':
+                    self.boardObj.board[point] = '💢'
                     self.print_board()
                     return False
                 self.boardObj.board[point]='🐸'
@@ -181,4 +180,3 @@ class Snake(Pointers):
 game_board = Board(9,9)
 player1 = Snake(game_board)
 player1
-            
